@@ -13,5 +13,8 @@
     "backend"
   ],
   "author": "Satish Kumar",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
 }
