@@ -1,4 +1,4 @@
-import { ApiError } from "../utils/ApiError"
+import { ApiError } from "../utils/ApiError.js"
 import { asyncHandler } from "../utils/asyncHandler.js"
 import { User } from "../models/user.model.js"
 import jwt from 'jsonwebtoken'
@@ -16,7 +16,6 @@ const verifyJWT = asyncHandler(async (req, _, next) => {
         const user = await User.findById(decodedToken?._id).select('-password -refreshToken');
 
         if (!user) {
-            // TODO: discuss about frontend
             throw new ApiError(401, "Invalid access token");
         }
 
